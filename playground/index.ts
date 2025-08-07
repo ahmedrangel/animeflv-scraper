@@ -1,11 +1,11 @@
 import {
   getAnimeInfo,
   getEpisode,
+  getLatest,
+  getOnAir,
   searchAnime,
   searchAnimesByFilter,
-  searchAnimesByURL,
-  getLatest,
-  getOnAir
+  searchAnimesByURL
 } from "animeflv-scraper";
 
 const working = {
@@ -24,4 +24,4 @@ const working = {
   getOnAir: Boolean((await getOnAir())?.length || 0 > 0)
 };
 
-console.log(working);
+console.info(working);
