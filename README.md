@@ -1,6 +1,6 @@
 # AnimeFLV-Scraper
 
-Librería Node.js para extraer información del stio `https://www3.animeflv.net/`
+Librería tipada para extraer información del sitio `https://www3.animeflv.net/`.
 
 ## Instalación
 ```sh
