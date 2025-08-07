@@ -1,5 +1,5 @@
 import { $fetch } from "ofetch";
-import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, AnimeflvUrls, FilterOrderEnum } from "../helpers";
+import { AnimeGenreEnum, AnimeStatusEnum, AnimeTypeEnum, AnimeflvUrls, FilterOrderEnum, callAnimeFLV } from "../helpers";
 import type { FilterOptions, SearchAnimeResults } from "../../types";
 import { executeSearch } from "./executeSearch";
 
@@ -29,7 +29,7 @@ export const searchAnimesByFilter = async (options?: FilterOptions): Promise<Sea
 
     const order = options?.order ? FilterOrderEnum[options.order as unknown as keyof typeof FilterOrderEnum] : "default";
 
-    const filterData = await $fetch(`${AnimeflvUrls.host}/browse`, {
+    const filterData = await callAnimeFLV("/browse", {
       query: {
         ...genres && Array.isArray(genres) ? { "genre[]": genres } : {},
         ...statuses && Array.isArray(statuses) ? { "status[]": statuses } : {},
@@ -37,7 +37,8 @@ export const searchAnimesByFilter = async (options?: FilterOptions): Promise<Sea
         order: order,
         ...options?.page ? { page: options.page } : {}
       }
-    }).catch(() => null);
+    });
+    if (!filterData) return null;
 
     return executeSearch(filterData);
   }

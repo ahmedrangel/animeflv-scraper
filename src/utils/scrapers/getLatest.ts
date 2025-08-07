@@ -1,6 +1,5 @@
 import { load } from "cheerio";
-import { $fetch } from "ofetch";
-import { AnimeflvUrls } from "../helpers";
+import { AnimeflvUrls, callAnimeFLV } from "../helpers";
 import type { ChapterData } from "../../types";
 
 /** * Obtiene los últimos episodios lanzados.
@@ -9,7 +8,8 @@ import type { ChapterData } from "../../types";
  */
 export const getLatest = async (): Promise<ChapterData[]> => {
   try {
-    const chaptersData = await $fetch(AnimeflvUrls.host).catch(() => null);
+    const chaptersData = await callAnimeFLV();
+    if (!chaptersData) return [];
     const $ = load(chaptersData);
 
     const chapterSelector = $("body > div.Wrapper > div > div > div > main > ul.ListEpisodios.AX.Rows.A06.C04.D03 > li");

@@ -1,6 +1,5 @@
 import { load } from "cheerio";
-import { $fetch } from "ofetch";
-import { AnimeflvUrls } from "../helpers";
+import { AnimeflvUrls, callAnimeFLV } from "../helpers";
 import type { AnimeOnAirData, AnimeType } from "../../types";
 
 /** Obtiene los animes que están en emisión actualmente.
@@ -9,7 +8,8 @@ import type { AnimeOnAirData, AnimeType } from "../../types";
  */
 export const getOnAir = async (): Promise<AnimeOnAirData[]> => {
   try {
-    const onAirData = await $fetch(AnimeflvUrls.host).catch(() => null);
+    const onAirData = await callAnimeFLV();
+    if (!onAirData) return [];
     const $ = load(onAirData);
 
     const onAir: AnimeOnAirData[] = [];

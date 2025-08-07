@@ -4,7 +4,7 @@ import type { SearchAnimeResults } from "../../types";
 import { scrapSearchAnimeData } from "./scrapAnimeData";
 import { getNextAndPrevPages } from "./getPrevAndNextPages";
 
-export const executeSearch = (searchData: string): SearchAnimeResults | null => {
+export const executeSearch = (searchData: string): SearchAnimeResults => {
   const $ = load(searchData);
 
   const search: SearchAnimeResults = {

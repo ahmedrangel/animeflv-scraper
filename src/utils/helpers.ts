@@ -1,3 +1,5 @@
+import { $fetch, type FetchOptions } from "ofetch";
+
 export const AnimeflvUrls = {
   host: "https://www3.animeflv.net",
   images: "https://animeflv.net"
@@ -73,4 +75,8 @@ export const AnimeGenreEnum = {
   "Vampiros": "vampiros",
   "Yaoi": "yaoi",
   "Yuri": "yuri"
+};
+
+export const callAnimeFLV = async (path: string = "", options?: FetchOptions<any>): Promise<string | null> => {
+  return $fetch<string>(`${AnimeflvUrls.host}${path}`, options).catch(() => null);
 };

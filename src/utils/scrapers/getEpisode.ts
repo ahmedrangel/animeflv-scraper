@@ -1,7 +1,6 @@
 import { load } from "cheerio";
-import { $fetch } from "ofetch";
-import { AnimeflvUrls } from "../helpers";
 import type { EpisodeInfoData, EpisodeServersData } from "../../types";
+import { callAnimeFLV } from "../helpers";
 
 /** * Obtiene los enlaces de streaming y descarga de un episodio de anime
  * @param {string} slug - El slug del anime o del episodio
@@ -15,15 +14,15 @@ export const getEpisode = async (slug: string, episode?: number): Promise<Episod
   try {
     const episodeData = async () => {
       if (slug && !episode)
-        return await $fetch(AnimeflvUrls.host + "/ver/" + slug).catch(() => null);
+        return await callAnimeFLV(`/ver/${slug}`);
       else if (slug && episode)
-        return await $fetch(AnimeflvUrls.host + "/ver/" + slug + "-" + episode).catch(() => null);
+        return await callAnimeFLV(`/ver/${slug}-${episode}`);
       else return null;
     };
 
-    if (!(await episodeData())) return null;
-
-    const $ = load(await episodeData());
+    const data = await episodeData();
+    if (!data) return null;
+    const $ = load(data);
 
     const episodeLinks: EpisodeInfoData = {
       title: $("body > div.Wrapper > div.Body > div > div > div > nav.Brdcrmb > a").next("i").next("a").text(),

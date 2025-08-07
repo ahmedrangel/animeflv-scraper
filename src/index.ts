@@ -1,5 +1,5 @@
 export { getAnimeInfo } from "./utils/scrapers/getAnimeInfo";
-export { getEpisode } from "./utils/scrapers/getEpisodeLinks";
+export { getEpisode } from "./utils/scrapers/getEpisode";
 export { searchAnime } from "./utils/scrapers/searchAnime";
 export { searchAnimesByFilter } from "./utils/scrapers/searchAnimesByFilter";
 export { searchAnimesByURL } from "./utils/scrapers/searchAnimesByUrl";

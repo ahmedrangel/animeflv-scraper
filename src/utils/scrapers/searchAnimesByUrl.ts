@@ -10,7 +10,8 @@ import { executeSearch } from "./executeSearch";
 export const searchAnimesByURL = async (url: string): Promise<SearchAnimeResults | null> => {
   if (!url || (typeof url) !== "string") throw new Error("URL no válido o no proporcionado");
   try {
-    const specificData = await $fetch(url).catch(() => null);
+    const specificData = await $fetch<string>(url).catch(() => null);
+    if (!specificData) return null;
     return executeSearch(specificData);
   }
   catch {

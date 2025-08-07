@@ -1,6 +1,5 @@
 import { load } from "cheerio";
-import { $fetch } from "ofetch";
-import { AnimeflvUrls } from "../helpers";
+import { AnimeflvUrls, callAnimeFLV } from "../helpers";
 import type { AnimeGenre, AnimeInfoData, AnimeRelated, AnimeStatus, AnimeType } from "../../types";
 
 /** * Obtiene la información de un anime por su slug
@@ -13,8 +12,7 @@ export const getAnimeInfo = async (
 ): Promise<AnimeInfoData | null> => {
   if (!slug || (typeof slug) !== "string") throw new Error("Slug no válido o no proporcionado");
   try {
-    const url = `${AnimeflvUrls.host}/anime/${slug}`;
-    const html = await $fetch<string>(url).catch(() => null);
+    const html = await callAnimeFLV(`/anime/${slug}`);
     if (!html) return null;
 
     const $ = load(html);
@@ -36,7 +34,7 @@ export const getAnimeInfo = async (
         .get() as AnimeGenre[],
       next_airing_episode: nextAiringInfo ? JSON.parse(nextAiringInfo)?.[3] : undefined,
       episodes: [],
-      url
+      url: `${AnimeflvUrls.host}/anime/${slug}`
     };
 
     const episodesFind = scripts.map((_, el) => $(el).html()).get().find(script => script?.includes("var episodes ="));
@@ -48,7 +46,7 @@ export const getAnimeInfo = async (
           animeInfo.episodes.push({
             number: i,
             slug: slug + "-" + i,
-            url: AnimeflvUrls.host + "/ver/" + slug + "-" + i
+            url: `${AnimeflvUrls.host}/ver/${slug}-${i}`
           });
         }
       }
