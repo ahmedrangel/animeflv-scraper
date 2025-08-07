@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/ahmedrangel/animeflv-scraper/compare/v0.1.1...v0.1.2)
+
+### 🩹 Fixes
+
+- Add missing order enum ([37b28dc](https://github.com/ahmedrangel/animeflv-scraper/commit/37b28dc))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v0.1.1
 
 [compare changes](https://github.com/ahmedrangel/animeflv-scraper/compare/v0.1.0...v0.1.1)
