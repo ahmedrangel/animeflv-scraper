@@ -12,6 +12,7 @@
 	"bugs": {
 		"url": "https://github.com/ahmedrangel/animeflv-scraper/issues"
 	},
+	"license": "MIT",
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
