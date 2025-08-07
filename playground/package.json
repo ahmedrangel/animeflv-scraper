@@ -1,0 +1,13 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "keywords": [],
+  "main": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "animeflv-scraper": "workspace:*"
+  }
+}
