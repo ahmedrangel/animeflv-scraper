@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.1
+
+[compare changes](https://github.com/ahmedrangel/animeflv-scraper/compare/v0.1.0...v0.1.1)
+
+### 🏡 Chore
+
+- **package:** Add license ([b1b4612](https://github.com/ahmedrangel/animeflv-scraper/commit/b1b4612))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v0.1.0
 
 
