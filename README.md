@@ -15,7 +15,7 @@ pnpm add animeflv-scraper
 ```
 
 ## Licencia
-[MIT License](https://github.com/ahmedrangel/animeflv-api/blob/main/LICENSE)
+[MIT License](https://github.com/ahmedrangel/animeflv-scraper/blob/main/LICENSE)
 
 # Funciones
 ### getAnimeInfo(params)
