@@ -1,6 +1,21 @@
 # Changelog
 
 
+## v0.1.3
+
+[compare changes](https://github.com/ahmedrangel/animeflv-scraper/compare/v0.1.2...v0.1.3)
+
+### 🏡 Chore
+
+- **release:** V0.1.2 ([764b419](https://github.com/ahmedrangel/animeflv-scraper/commit/764b419))
+- **playground:** Test all ([47f8451](https://github.com/ahmedrangel/animeflv-scraper/commit/47f8451))
+- Simplify request calls ([972e4a8](https://github.com/ahmedrangel/animeflv-scraper/commit/972e4a8))
+- Adjust ([f39425c](https://github.com/ahmedrangel/animeflv-scraper/commit/f39425c))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v0.1.2
 
 [compare changes](https://github.com/ahmedrangel/animeflv-scraper/compare/v0.1.1...v0.1.2)
