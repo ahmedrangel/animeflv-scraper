@@ -1,2 +1,6 @@
+minimumReleaseAge: 0
 packages:
   - playground
+allowBuilds:
+  esbuild: false
+  unrs-resolver: false
