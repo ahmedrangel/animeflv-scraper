@@ -1,7 +1,7 @@
 import { $fetch, type FetchOptions } from "ofetch";
 
 export const AnimeflvUrls = {
-  host: "https://www3.animeflv.net",
+  host: "https://www4.animeflv.net",
   images: "https://animeflv.net"
 };
 

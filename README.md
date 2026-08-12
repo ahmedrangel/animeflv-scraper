@@ -1,6 +1,6 @@
 # AnimeFLV-Scraper
 
-Librería tipada para extraer información del sitio `https://www3.animeflv.net/`.
+Librería tipada para extraer información del sitio `https://www4.animeflv.net/`.
 
 ## Instalación
 ```sh
