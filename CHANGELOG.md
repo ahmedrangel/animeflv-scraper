@@ -1,6 +1,30 @@
 # Changelog
 
 
+## v0.2.0
+
+[compare changes](https://github.com/ahmedrangel/animeflv-scraper/compare/v0.1.3...v0.2.0)
+
+### 🩹 Fixes
+
+- Update animeflv site host ([eed7556](https://github.com/ahmedrangel/animeflv-scraper/commit/eed7556))
+
+### 📦 Build
+
+- ⚠️  Drop cjs, migrate from unbuild to obuild, update deps ([47b0c44](https://github.com/ahmedrangel/animeflv-scraper/commit/47b0c44))
+
+### 🏡 Chore
+
+- **release:** V0.1.3 ([5afaeeb](https://github.com/ahmedrangel/animeflv-scraper/commit/5afaeeb))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Drop cjs, migrate from unbuild to obuild, update deps ([47b0c44](https://github.com/ahmedrangel/animeflv-scraper/commit/47b0c44))
+
+### ❤️ Contributors
+
+- Ahmed Rangel ([@ahmedrangel](https://github.com/ahmedrangel))
+
 ## v0.1.3
 
 [compare changes](https://github.com/ahmedrangel/animeflv-scraper/compare/v0.1.2...v0.1.3)
